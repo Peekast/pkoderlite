@@ -95,7 +95,7 @@ func makeEncoderConfig(protocol string, listenURI string, timeout int, rtmpDst [
 	}
 	i := 0
 	for _, rtmp := range rtmpDst {
-		if i < MAX_ENCODER_OUTPUTS {
+		if i < MAX_ENCODER_OUTPUTS && rtmp != "" {
 			config.Outputs[i] = &EncoderOutput{
 				Dst:        rtmp,
 				Type:       "flv",
@@ -107,7 +107,7 @@ func makeEncoderConfig(protocol string, listenURI string, timeout int, rtmpDst [
 		}
 	}
 	for _, ts := range mpegts {
-		if i < MAX_ENCODER_OUTPUTS {
+		if i < MAX_ENCODER_OUTPUTS && ts != "" {
 			config.Outputs[i] = &EncoderOutput{
 				Dst:        ts,
 				Type:       "mpegts",
