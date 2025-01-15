@@ -172,6 +172,9 @@ func NewEncoder(protocol string, listenURI string, timeout int, rtmpDst []string
 			return nil, err
 		}
 	}
+
+	fmt.Println("Config", config)
+
 	for i := 0; i < 4; i++ {
 		if config.Outputs[i] != nil {
 			out := config.Outputs[i]
