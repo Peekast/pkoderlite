@@ -102,6 +102,7 @@ func makeEncoderConfig(protocol string, listenURI string, timeout int, rtmpDst [
 				KVOpts:     "flvflags=no_duration_filesize",
 				IgnoreFail: true,
 			}
+			fmt.Println(config.Outputs[i])
 			i++
 		}
 	}
@@ -112,6 +113,7 @@ func makeEncoderConfig(protocol string, listenURI string, timeout int, rtmpDst [
 				Type:       "mpegts",
 				IgnoreFail: true,
 			}
+			fmt.Println(config.Outputs[i])
 			i++
 		}
 	}
